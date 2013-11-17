@@ -1,0 +1,15 @@
+{
+    "ContactManager.resource": {
+        "createdById": "005i0000001unQhAAI", 
+        "createdByName": "Zach Horton", 
+        "createdDate": "2013-10-23 11:21:05", 
+        "fileName": "unpackaged/staticresources/ContactManager.resource", 
+        "fullName": "ContactManager", 
+        "id": "081i0000000VnqmAAC", 
+        "lastModifiedById": "005i0000001unQhAAI", 
+        "lastModifiedByName": "Zach Horton", 
+        "lastModifiedDate": "2013-10-23 11:46:37", 
+        "manageableState": "unmanaged", 
+        "type": "StaticResource"
+    }
+}

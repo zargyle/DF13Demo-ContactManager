@@ -1,0 +1,53 @@
+<script class="view-template" id="DatagridView" type="text/x-handlebars-template">
+	<div class="well">
+	{{selectedValue this}}
+		<div class="row-fluid">
+			<div class="span7">
+				{{#if _searchClause}}<label>Search:</label>
+				<input type="text" class="search-term" value="{{_searchTerm}}">
+					<a class="btn btn-search btn-primary">Search&nbsp;<i class="icon-search"></i></a> 
+					<a class="btn btn-reset btn-danger" style="display:none;">Reset&nbsp;<i class="icon-remove"></i></a> 
+				{{else}}
+					<a class="btn btn-reset btn-danger" style="display:none;">Reset&nbsp;<i class="icon-remove"></i></a> 
+				{{/if}}
+			</div>
+			<div class="span5 pull-right">
+				<div class="row-fluid pull-right">
+					<a class="btn btn-small pull-right btn-next {{#unless this.hasNext}}disabled{{/unless}}" {{#unless this.hasNext}}disabled="disabled" readonly="readonly"{{/unless}}>Next</a>
+					<span class="pull-right">&nbsp;-&nbsp;</span>
+					<a class="btn btn-small pull-right btn-previous {{#unless this.hasPrevious}}disabled{{/unless}}" {{#unless this.hasPrevious}}disabled="disabled" readonly="readonly"{{/unless}}>Previous</a>
+					<span class="pull-right">&nbsp;&nbsp;</span>
+					<span class="pull-right">
+						<b>limit</b>
+						<select style="width:70px;" class="table-limit">
+							<option value="10" {{selectedValue 10 pageSize}}>10</option>
+							<option value="25" {{selectedValue 25 pageSize}}>25</option>
+							<option value="50" {{selectedValue 50 pageSize}}>50</option>
+							<option value="100" {{selectedValue 100 pageSize}}>100</option>
+							<option value="200" {{selectedValue 200 pageSize}}>200</option>
+						</select>
+						<b>Records</b>&nbsp;&nbsp;
+					</span>
+				</div>
+				<div class="row-fluid">
+					<span class="pull-right">Showing <span class="current-page">{{this.currentResult}}</span> - <span class="current-page-set">{{this.currentResultSet}}</span> of <span class="total-records">{{this.totalRecords}}</span> Records</span>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<table class="table table-hover table-bordered table-striped {{Id}}">
+				<thead>
+				{{#each this._selectFields}}
+					{{#if this.name}}
+						<th {{#if this.noSort}}{{else}}sort-field="{{../apiName}}" {{sortFieldDirection ../../../sortField this.apiName ../../../sortDirection ../../../this}}{{/if}}>{{this.name}}</th>
+					{{/if}}
+				{{/each}}
+				</thead>
+		<tbody>
+		</tbody>
+	</table>
+		</div>
+	
+	</div>
+	
+</script>

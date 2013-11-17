@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<project name="buildSystem" default="deploy" basedir="." xmlns:sf="antlib:com.salesforce">
+
+  <property file="build.properties"/>
+  <property environment="env"/>
+  
+  <import file="${DeployScriptsDir}/build.xml"/>
+
+</project>

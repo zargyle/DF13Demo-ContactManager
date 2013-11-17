@@ -1,0 +1,43 @@
+{
+  "name": "ContactManager",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-compress": "*",
+    "grunt-zipstream": "*",
+    "grunt-contrib-copy": "~0.4.0",
+    "grunt-ant-sfdc": "0.1.3"
+  },
+  "author": {
+    "name": "Red Argyle",
+    "email": "RAstaff@redargyle.com",
+    "url": "http://redargyle.com.com/"
+  },
+  "files": [
+    "js",
+    "css"
+  ],
+  "templates": {
+    "path": "js/_framework/templates/",
+    "templates": {
+      "itemViewJS": "ra_js_view.js",
+      "itemViewHtml": "ra_js_view.html",
+      "applicationJS": "ra_js_application.js",
+      "applicationLayoutJS": "ra_js_application_layout.js",
+      "applicationLayoutHTML": "ra_js_application_layout.html",
+      "moduleJS": "ra_js_module.js",
+      "layoutJS": "ra_js_layout.js",
+      "layoutHTML": "ra_js_layout.html",
+      "compositeViewJS": "ra_js_composite_view.js",
+      "compositeViewHTML": "ra_js_composite_view.html",
+      "compositeItemViewHTML": "ra_js_item_view.html",
+      "applicationPage": "ra_page_application.page",
+      "applicationPageMeta": "ra_page_application.page-meta.xml"
+    }
+  },
+  "Namespace" : "ContactManager"
+}

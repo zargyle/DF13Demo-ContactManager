@@ -1,0 +1,27 @@
+<script class="view-template" id="TheFormContactFormView" type="text/x-handlebars-template">
+	<form class="contactForm" data-api-object="Contact">
+		<legend>Edit Contact</legend>
+	
+		<div class="form-group">
+			<label for="">First Name</label>
+			<input type="text" class="form-control" id="FirstName{{_cid}}" value="{{FirstName}}" data-api-name="FirstName" />
+		</div>
+
+		<div class="form-group">
+			<label for="">Last Name</label>
+			<input type="text" class="form-control" id="LastName{{_cid}}" value="{{LastName}}" data-api-name="LastName" />
+		</div>
+
+		<div class="form-group">
+			<label for="">Phone</label>
+			<input type="text" class="form-control" id="Phone{{_cid}}" value="{{Phone}}" data-api-name="Phone" />
+		</div>
+
+		<div class="form-group">
+			<label for="">Email</label>
+			<input type="text" class="form-control" id="Email{{_cid}}" value="{{Email}}" data-api-name="Email" />
+		</div>
+	
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</script>

@@ -1,0 +1,19 @@
+{
+    "username": "zach.df13.demo@redargyle.com", 
+    "environment": "developer", 
+    "project_name": "DF13DemoWorking", 
+    "workspace": "/Users/zacharyhorton/Documents/workspace/sublimetext", 
+    "org_url": "", 
+    "namespace": "", 
+    "id": "RV54IMKO88U7Q0RKUH0JNEQ9RAMII7JD", 
+    "metadata_container": "1dci0000000ERz9AAG", 
+    "subscription": [
+        "ApexClass", 
+        "ApexComponent", 
+        "ApexPage", 
+        "ApexTrigger", 
+        "StaticResource", 
+        "CustomObject", 
+        "Profile"
+    ]
+}

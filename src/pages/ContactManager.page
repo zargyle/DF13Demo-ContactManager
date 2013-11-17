@@ -1,0 +1,87 @@
+<apex:page cache="false" expires="0" standardStylesheets="false" showHeader="false" sidebar="false">
+<!--/*
+ * @Application Page ContactManager
+ * @author Zach Horton - zach@redargyle.com
+ * @created Tue Oct 22 2013 20:46:57 GMT-0400 (EDT)
+ *
+ ==========================================*/-->
+<apex:outputText escape="false" value="{!"<!DOCTYPE html>"}" />
+<html lang="en">
+    <head>
+       <meta charset="utf-8"/>
+       <title>Application</title>
+       <meta name="description" content=""/>
+       <meta name="author" content=""/>
+
+       <!-- Meta Mobile View Points -->
+       <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+       <meta name="apple-mobile-web-app-capable" content="yes" />
+       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+       <!-- Le styles -->
+       <link rel="stylesheet" href="{!URLFOR($RESOURCE.ContactManager)}/css/lib_styles.css" />
+       <link rel="stylesheet" href="{!URLFOR($RESOURCE.ContactManager)}/css/main.css" />
+       <link rel="stylesheet" href="{!URLFOR($RESOURCE.ContactManager)}/css/bootstrap-responsive.css" />
+       <link rel="stylesheet" href="{!URLFOR($RESOURCE.ContactManager)}/css/glyphicon-free.css" />
+
+       <!-- if you use the Service model with remoteActions, include here -->
+       <c:include_Service />
+    </head>    
+    <body>
+       <div id="body"></div>    
+       <div class="modal hide fade source-modal" id="global-modal" ></div>
+
+       <!-- Le javascript
+       ================================================== -->
+       <!-- Placed at the end of the document so the pages load faster -->
+
+        <script src="{!URLFOR($RESOURCE.ContactManager)}/js/lib_scripts.js"></script>
+        <script src="../../soap/ajax/28.0/connection.js" type="text/javascript"></script>
+       <script src="{!URLFOR($RESOURCE.ContactManager)}/js/app_scripts.js"></script>
+       <script type="text/javascript">
+          //fix ipad issue with dropdown menu for search
+          $(document).on('touchstart.dropdown', '.dropdown-menu', function(e) { e.stopPropagation(); });
+          function uploadSuccess(id) {
+            alert('successfully uploaded file');
+          }
+       </script>
+
+       <script>
+          //load templates
+          $(function() {
+             //initalize RA JS framework
+             initialize();
+
+             //set the system vars here using custom settings that have 
+             //Variable_Value__c and Variable_Name__c as Text fields to drop in
+             //Custom Settings to the JS Side. You need to set this up in Salesforce
+             /*callService({
+                 service : 'Service.getCustomSettings',
+                 params : ['MySettings__c'],
+                 successCallback : function(result) {
+                  for(var i = 0; i < result.records.length; i++) {
+                    window[result.records[i].Variable_Name__c] = result.records[i].Variable_Value__c;
+                  }
+                 },
+                 errorCallback : function(result) {
+                     flashMessage({message: 'Failed to Load Custom Settings'});
+                 }
+             });*/
+             templates.loadTemplates({
+                path : '{!URLFOR($RESOURCE.ContactManager)}/templates/',
+                names : ["app_templates"],
+                callback : function() {
+                    //kick off the app
+                    ContactManagerApp.start();//Name Of your Application
+                }
+             });
+
+              
+          
+          });
+       </script>
+
+    </body>
+</html>
+    
+</apex:page>

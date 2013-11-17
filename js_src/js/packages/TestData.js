@@ -1,0 +1,1 @@
+/* object to define local data service returns */
